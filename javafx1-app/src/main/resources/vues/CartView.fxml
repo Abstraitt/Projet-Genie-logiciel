@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  Écran du panier.
+  Tout en haut à gauche : le lien "← Continuer mes achats", puis le titre "Mon panier".
+  Au milieu : une ligne par produit, de gauche à droite :
+    nom, prix unitaire, quantité (avec ses flèches), total de la ligne, bouton "Retirer".
+  Si le panier est vide : un message à la place des lignes.
+  Tout en bas à droite : "Total : ..." puis le bouton "Passer la commande".
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.groupe4.controllers.CartController"
+      styleClass="ecran-connexion"
+      spacing="14">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30" />
+    </padding>
+
+    <Hyperlink text="← Continuer mes achats" onAction="#continuerAchats" />
+    <Label text="Mon panier" styleClass="titre-ecran" />
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="zone-defilement">
+        <VBox fx:id="zoneLignes" spacing="10" styleClass="zone-produits" />
+    </ScrollPane>
+
+    <Label fx:id="messageVide" text="Votre panier est vide." managed="false" visible="false" />
+
+    <HBox spacing="20" alignment="CENTER_RIGHT">
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="labelTotal" styleClass="total-panier" />
+        <Button fx:id="boutonCommander" text="Passer la commande" styleClass="bouton-principal" onAction="#passerCommande" />
+    </HBox>
+
+</VBox>

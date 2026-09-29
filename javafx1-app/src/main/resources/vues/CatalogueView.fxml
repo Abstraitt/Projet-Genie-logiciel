@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  Écran du catalogue.
+  Tout en haut : le titre "Catalogue" à gauche, le lien "Se déconnecter" à droite.
+  En dessous : la barre de recherche (champ de texte, liste des catégories, bouton "Rechercher").
+  Au milieu : la grille des produits (des cartes rangées de gauche à droite, puis à la ligne).
+  Tout en bas : "Précédent", "Page x sur y", "Suivant", centrés.
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.groupe4.controllers.CatalogueController"
+      styleClass="ecran-connexion"
+      spacing="14">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <Label text="Catalogue" styleClass="titre-ecran" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Hyperlink fx:id="lienPanier" text="Mon panier" onAction="#ouvrirPanier" />
+        <Hyperlink text="Se déconnecter" onAction="#seDeconnecter" />
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="champRecherche" promptText="Rechercher un produit..." HBox.hgrow="ALWAYS" />
+        <ComboBox fx:id="comboCategorie" prefWidth="200" />
+        <Button text="Rechercher" styleClass="bouton-principal" onAction="#rechercher" />
+    </HBox>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="zone-defilement">
+        <FlowPane fx:id="zoneProduits" hgap="16" vgap="16" styleClass="zone-produits">
+            <padding>
+                <Insets top="6" right="6" bottom="6" left="6" />
+            </padding>
+        </FlowPane>
+    </ScrollPane>
+
+    <Label fx:id="messageVide" text="Aucun produit ne correspond à votre recherche." styleClass="message-erreur" managed="false" visible="false" />
+
+    <HBox spacing="16" alignment="CENTER">
+        <Button fx:id="boutonPrecedent" text="Précédent" onAction="#pagePrecedente" />
+        <Label fx:id="labelPage" text="Page 1 sur 1" />
+        <Button fx:id="boutonSuivant" text="Suivant" onAction="#pageSuivante" />
+    </HBox>
+
+</VBox>

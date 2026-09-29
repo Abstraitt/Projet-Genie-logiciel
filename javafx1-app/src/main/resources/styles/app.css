@@ -1,0 +1,125 @@
+.ecran-connexion {
+    -fx-background-color: #F4F6FA;
+}
+
+.titre-ecran {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F3864;
+}
+
+.etiquette-champ {
+    -fx-font-size: 12px;
+    -fx-text-fill: #444444;
+}
+
+.text-field, .password-field {
+    -fx-pref-height: 36px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-color: #CCCCCC;
+    -fx-padding: 6px 10px;
+}
+
+.bouton-principal {
+    -fx-background-color: #1F3864;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-height: 38px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.bouton-principal:hover {
+    -fx-background-color: #16294D;
+}
+
+.message-erreur {
+    -fx-text-fill: #C0392B;
+    -fx-font-size: 12px;
+}
+
+.aide-champ {
+    -fx-text-fill: #777777;
+    -fx-font-size: 11px;
+}
+
+.message-succes {
+    -fx-text-fill: #1E8449;
+    -fx-font-size: 12px;
+}
+
+.zone-defilement {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.zone-produits {
+    -fx-background-color: transparent;
+}
+
+.carte-produit {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #DDDDDD;
+    -fx-border-radius: 8px;
+    -fx-padding: 14px;
+}
+
+.carte-nom {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F3864;
+}
+
+.carte-categorie {
+    -fx-font-size: 11px;
+    -fx-text-fill: #777777;
+}
+
+.carte-prix {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+.stock-ok {
+    -fx-text-fill: #1E8449;
+    -fx-font-size: 12px;
+}
+
+.stock-faible {
+    -fx-text-fill: #B9770E;
+    -fx-font-size: 12px;
+}
+
+.stock-rupture {
+    -fx-text-fill: #C0392B;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.image-produit {
+    -fx-background-color: #E4E7EE;
+    -fx-background-radius: 8px;
+}
+
+.prix-fiche {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+.ligne-panier {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #DDDDDD;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px 16px;
+}
+
+.total-panier {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F3864;
+}

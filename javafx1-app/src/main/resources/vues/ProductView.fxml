@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  Fiche produit.
+  Tout en haut à gauche : le lien "Retour au catalogue".
+  En dessous, deux colonnes :
+    - à gauche : un grand carré gris (la place de l'image du produit),
+    - à droite : le nom, la catégorie, le prix, l'état du stock, la description,
+      puis la quantité (avec ses flèches) et le bouton "Ajouter au panier".
+  Sous le bouton : un message de confirmation vert (caché tant qu'on n'a rien ajouté).
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.groupe4.controllers.ProductController"
+      styleClass="ecran-connexion"
+      spacing="20">
+
+    <padding>
+        <Insets top="20" right="40" bottom="30" left="40" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT">
+        <Hyperlink text="← Retour au catalogue" onAction="#retourCatalogue" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Hyperlink text="Voir le panier" onAction="#voirPanier" />
+    </HBox>
+
+    <HBox spacing="40" alignment="TOP_LEFT">
+
+        <StackPane fx:id="zoneImage" styleClass="image-produit" prefWidth="320" prefHeight="320" minWidth="320">
+            <Label text="Image du produit" styleClass="carte-categorie" />
+        </StackPane>
+
+        <VBox spacing="10" prefWidth="460">
+            <Label fx:id="labelNom" styleClass="titre-ecran" wrapText="true" />
+            <Label fx:id="labelCategorie" styleClass="carte-categorie" />
+            <Label fx:id="labelPrix" styleClass="prix-fiche" />
+            <Label fx:id="labelStock" />
+            <Label fx:id="labelDescription" wrapText="true" />
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="Quantité" styleClass="etiquette-champ" />
+                <Spinner fx:id="spinnerQuantite" editable="false" prefWidth="90" />
+            </HBox>
+
+            <Button fx:id="boutonAjouter" text="Ajouter au panier" styleClass="bouton-principal" maxWidth="260" onAction="#ajouterAuPanier" />
+
+            <Label fx:id="messageConfirmation" styleClass="message-succes" wrapText="true" managed="false" visible="false" />
+        </VBox>
+
+    </HBox>
+
+</VBox>

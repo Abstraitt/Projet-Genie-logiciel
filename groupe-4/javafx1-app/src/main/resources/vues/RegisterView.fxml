@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  Écran d'inscription.
+  En haut : le titre.
+  Au milieu, l'un sous l'autre : nom, email, mot de passe (avec sa règle en petit),
+  confirmation du mot de passe.
+  En dessous : message d'erreur (rouge) ou de réussite (vert), cachés par défaut.
+  Puis le bouton "Créer mon compte", et tout en bas le lien "Se connecter".
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.groupe4.controllers.RegisterController"
+      styleClass="ecran-connexion"
+      alignment="CENTER"
+      spacing="16">
+
+    <padding>
+        <Insets top="40" right="60" bottom="40" left="60" />
+    </padding>
+
+    <Label text="Créer un compte" styleClass="titre-ecran" />
+
+    <VBox maxWidth="320" spacing="8">
+
+        <Label text="Nom" styleClass="etiquette-champ" />
+        <TextField fx:id="champNom" promptText="Votre nom" />
+
+        <Label text="Adresse email" styleClass="etiquette-champ" />
+        <TextField fx:id="champEmail" promptText="exemple@email.com" />
+
+        <Label text="Mot de passe" styleClass="etiquette-champ" />
+        <PasswordField fx:id="champMotDePasse" promptText="Votre mot de passe" />
+        <Label text="12 caractères minimum, avec majuscule, minuscule, chiffre et caractère spécial."
+               styleClass="aide-champ" wrapText="true" />
+
+        <Label text="Confirmer le mot de passe" styleClass="etiquette-champ" />
+        <PasswordField fx:id="champConfirmation" promptText="Retapez le mot de passe" />
+
+        <Label fx:id="messageErreur" styleClass="message-erreur" wrapText="true" managed="false" visible="false" />
+        <Label fx:id="messageSucces" styleClass="message-succes" wrapText="true" managed="false" visible="false" />
+
+        <Button fx:id="boutonInscription" text="Créer mon compte" styleClass="bouton-principal" maxWidth="Infinity" onAction="#sInscrire" />
+
+        <Hyperlink text="Déjà un compte ? Se connecter" onAction="#retourConnexion" />
+
+    </VBox>
+
+</VBox>
